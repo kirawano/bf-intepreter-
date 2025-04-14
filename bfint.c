@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
-int
-strcount (char* str, char c) {
+int strcount (char* str, char c) {
 	int total = 0;
 	for (int i = 0; i < strlen(str); i++){
 		if (str[i] == c) {
@@ -12,11 +10,9 @@ strcount (char* str, char c) {
 	return total;
 }
 
-int
-evaluate (char* code, int mem[], int memlength) {
+int evaluate (char* code, int mem[], int memlength) {
 	int dp = 0;
 	int c;
-
 	int stack[256] = {0};
 	char substr[256];
 	int sp = 0;
@@ -34,14 +30,13 @@ evaluate (char* code, int mem[], int memlength) {
 				}
 				break;
 			case '<':
-				if (dp > 0)
-					dp--;
-				else{
+				if (dp <= 0){
 					printf("Too low");
 					return 1;
 				}
+				dp--;
 			case '.':
-				printf("%c\n", (char) mem[dp]);
+				printf("%i", mem[dp]);
 				break;
 			case '+':
 				mem[dp]++;
