@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <string.h>
-int strcount (char* str, char c) {
+
+
+int 
+strcount (char* str, char c) {
 	int total = 0;
 	for (int i = 0; i < strlen(str); i++){
 		if (str[i] == c) {
@@ -10,7 +13,8 @@ int strcount (char* str, char c) {
 	return total;
 }
 
-int evaluate (char* code, int mem[], int memlength) {
+int 
+evaluate (char* code, int mem[], int memlength) {
 	int dp = 0;
 	int c;
 	int stack[256] = {0};
